@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "913645121743",
+    "project_id": "crew-brew-8a6a3",
+    "storage_bucket": "crew-brew-8a6a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913645121743:android:3a2869020ece755a2d87ba",
+        "android_client_info": {
+          "package_name": "com.mindscape.crew_brew"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913645121743-7i7asplgabs0dpcprknllqp010df2cqq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZLZ-d1W0Ifuq5c83wC5mMEPhbPG-xEtQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "913645121743-7i7asplgabs0dpcprknllqp010df2cqq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
