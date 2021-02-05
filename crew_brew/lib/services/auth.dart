@@ -26,4 +26,15 @@ class AuthService {
       return null;
     }
   }
+
+  //sign out
+  Future signOutUser() async {
+    try{
+      return await _auth.signOut();
+    }catch (e){
+      print (e.toString());
+      return null;
+    }
+  }
+
 }
