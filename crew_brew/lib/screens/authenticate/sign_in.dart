@@ -2,12 +2,15 @@ import 'package:crew_brew/services/auth.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
+  final Function passValue;
+
+  SignIn({this.passValue});
+
   @override
   _SignInState createState() => _SignInState();
 }
 
 class _SignInState extends State<SignIn> {
-
   final AuthService _auth = AuthService();
 
   String email = "";
@@ -21,6 +24,14 @@ class _SignInState extends State<SignIn> {
         backgroundColor: Colors.brown[400],
         elevation: 0,
         title: Text("Sign in to Brew Crew"),
+        actions: <Widget>[
+          FlatButton.icon(
+              onPressed: () {
+                widget.passValue();
+              },
+              icon: Icon(Icons.person),
+              label: Text("Register"))
+        ],
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
@@ -28,11 +39,9 @@ class _SignInState extends State<SignIn> {
           child: Column(
             children: <Widget>[
               SizedBox(height: 20),
-              TextFormField(
-                onChanged: (val) {
-                  setState(() => email = val);
-                }
-              ),
+              TextFormField(onChanged: (val) {
+                setState(() => email = val);
+              }),
               SizedBox(height: 20),
               TextFormField(
                 obscureText: true,
@@ -47,11 +56,10 @@ class _SignInState extends State<SignIn> {
                     "Sign In",
                     style: TextStyle(color: Colors.black),
                   ),
-                onPressed: () async {
-                  print(email);
-                  print(password);
-                }
-              ),
+                  onPressed: () async {
+                    print(email);
+                    print(password);
+                  }),
             ],
           ),
         ),
