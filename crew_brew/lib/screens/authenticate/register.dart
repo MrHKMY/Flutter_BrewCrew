@@ -2,12 +2,15 @@ import 'package:crew_brew/services/auth.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
+
+  final Function passValue;
+  Register({this.passValue});
+
   @override
   _RegisterState createState() => _RegisterState();
 }
 
 class _RegisterState extends State<Register> {
-
   final AuthService _authService = AuthService();
 
   String email = "";
@@ -21,6 +24,14 @@ class _RegisterState extends State<Register> {
         backgroundColor: Colors.brown[400],
         elevation: 0,
         title: Text("Sign up to Brew Crew"),
+        actions: <Widget>[
+          FlatButton.icon(
+              onPressed: () {
+                widget.passValue();
+              },
+              icon: Icon(Icons.person),
+              label: Text("Sign In"))
+        ],
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
@@ -28,11 +39,9 @@ class _RegisterState extends State<Register> {
           child: Column(
             children: <Widget>[
               SizedBox(height: 20),
-              TextFormField(
-                  onChanged: (val) {
-                    setState(() => email = val);
-                  }
-              ),
+              TextFormField(onChanged: (val) {
+                setState(() => email = val);
+              }),
               SizedBox(height: 20),
               TextFormField(
                 obscureText: true,
@@ -50,8 +59,7 @@ class _RegisterState extends State<Register> {
                   onPressed: () async {
                     print(email);
                     print(password);
-                  }
-              ),
+                  }),
             ],
           ),
         ),
