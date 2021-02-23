@@ -53,10 +53,7 @@ class _SettingsFormState extends State<SettingsForm> {
               max: 900,
               divisions: 8,
               onChanged: (val) => setState(() => _currentStrength = val.round()),
-
             ),
-            //dropdown
-            //slider
             RaisedButton(
                 color: Colors.red,
                 child: Text(
